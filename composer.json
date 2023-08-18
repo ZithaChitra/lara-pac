@@ -1,0 +1,37 @@
+{
+    "name": "blessing/brandsplash-package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Blessing\\BrandsplashPackage\\": "src",
+            "Blessing\\BrandsplashPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Blessing\\BrandsplashPackage\\BlogPackageServiceProvider"
+            ],
+            "aliases": {
+                "Calculator": "Blessing\\BrandsplashPackage\\Facades\\Calculator"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Blessing Chitra",
+            "email": "blessing@brandsplash.co.za"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.6"
+    }
+}
