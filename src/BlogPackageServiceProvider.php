@@ -6,6 +6,7 @@ namespace Blessing\BrandsplashPackage;
 use Illuminate\Support\ServiceProvider;
 use Blessing\BrandsplashPackage\Http\Middleware\CapitalizeTitle;
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Support\Facades\Artisan;
 
 class BlogPackageServiceProvider extends ServiceProvider 
 {
@@ -32,6 +33,8 @@ class BlogPackageServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__. '/../database/migrations');
         $this->loadRoutesFrom(__DIR__. '/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blogpackage');
+        Artisan::command('adminlte:install');
+        
     }
 }
 
