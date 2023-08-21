@@ -11,7 +11,8 @@ class PostController extends Controller
 
     public function show()
     {
-        dd('Posts Controller: \'Show\' running');
+
+        return view('blogpackage::posts.show');
     }
 
     public function store()
