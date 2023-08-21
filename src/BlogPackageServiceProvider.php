@@ -33,7 +33,7 @@ class BlogPackageServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__. '/../database/migrations');
         $this->loadRoutesFrom(__DIR__. '/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blogpackage');
-        Artisan::command('adminlte:install');
+        Artisan::call('adminlte:install');
         
     }
 }
